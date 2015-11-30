@@ -1138,7 +1138,12 @@ INTERNAL_SYSTEMIMAGE_FILES := $(filter $(TARGET_OUT)/%, \
     $(RECOVERY_PATCH_INSTALL))
 
 
-FULL_SYSTEMIMAGE_DEPS := $(INTERNAL_SYSTEMIMAGE_FILES) $(INTERNAL_USERIMAGES_DEPS)
+#FULL_SYSTEMIMAGE_DEPS := $(INTERNAL_SYSTEMIMAGE_FILES) $(INTERNAL_USERIMAGES_DEPS)
+systemimage-squisher: $(INTERNAL_SYSTEMIMAGE_FILES)
+	@echo -e ${CL_YLW}"Optimizing PNGs to Shrink ROM Size!"${CL_RST}
+	$(hide) APKCERTS=$(APKCERTS_FILE) $(SQUISHER_SCRIPT) $@
+
+.PHONY: systemimage-squisher
 # -----------------------------------------------------------------
 # installed file list
 # Depending on anything that $(BUILT_SYSTEMIMAGE) depends on.
@@ -1877,9 +1882,9 @@ ifneq ($(TARGET_UNIFIED_DEVICE),)
     endif
 endif
 
-#ifneq ($(BLOCK_BASED_OTA),false)
+ifneq ($(BLOCK_BASED_OTA),false)
 #    $(INTERNAL_OTA_PACKAGE_TARGET): block_based := --block
-#endif
+endif
 
 $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	@echo "$(OTA_FROM_TARGET_SCRIPT)" > $(PRODUCT_OUT)/ota_script_path
@@ -1903,7 +1908,10 @@ bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CM_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CM_TARGET_PACKAGE) > $(CM_TARGET_PACKAGE).md5sum
 	@echo -e ${CL_CYN}"Package Complete: $(CM_TARGET_PACKAGE)"${CL_RST}
-
+ifdef FINISHER_SCRIPT
+	@echo -e ${CL_YLW}"Running finisher..."${CL_RST}
+	$(hide) $(FINISHER_SCRIPT) $@
+endif
 # -----------------------------------------------------------------
 # The factory package
 
