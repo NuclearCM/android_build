@@ -84,8 +84,7 @@ $(combo_2nd_arch_prefix)TARGET_thumb_CFLAGS :=  -mthumb \
 
 $(combo_2nd_arch_prefix)TARGET_GLOBAL_CFLAGS += $(NUCLEAR_GCC_CFLAGS)
 $(combo_2nd_arch_prefix)TARGET_GLOBAL_CPPFLAGS += $(NUCLEAR_GCC_CPPFLAGS)
-$(combo_2nd_arch_prefix)TARGET_GLOBAL_LDFLAGS += $(NUCLEAR_GCC_LDFLAGS)                        
-
+$(combo_2nd_arch_prefix)TARGET_GLOBAL_LDFLAGS += $(NUCLEAR_GCC_LDFLAGS)
 
 # Set FORCE_ARM_DEBUGGING to "true" in your buildspec.mk
 # or in your environment to force a full arm build, even for
