@@ -1,6 +1,6 @@
 #You can find more at: https://github.com/ArchiDroid/android_build/commit/a062cc61184950df02c39a038c5bfaef5a8b268c
 # General optimization level of target ARM compiled with GCC. Default: -O2
-NUCLEAR_GCC_CFLAGS_ARM := -Os
+NUCLEAR_GCC_CFLAGS_ARM := -O3
 
 # General optimization level of target THUMB compiled with GCC. Default: -Os
 NUCLEAR_GCC_CFLAGS_THUMB := -O3
