@@ -630,6 +630,29 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
+  script.Print("--------------------------------------------------------")
+  script.Print("--                                                    --")
+  script.Print("--                   NucleaRomReborn                  --")
+  script.Print("--                     TeamNuclear                    --")
+  script.Print("--                                                    --")
+  script.Print("--------------------------------------------------------")
+  script.Print("                         xxxxxxx  ")               
+  script.Print("                    x xxxxxxxxxxxxx x                 ")
+  script.Print("                 x     xxxxxxxxxxx     x             ")      
+  script.Print("                        xxxxxxxxx                    ")
+  script.Print("              x          xxxxxxx          x           ")
+  script.Print("                          xxxxx                       ")
+  script.Print("             x             xxx             x      ")
+  script.Print("                            x                      ")
+  script.Print("            xxxxxxxxxxxxxxx   xxxxxxxxxxxxxxx     ")
+  script.Print("             xxxxxxxxxxxxx     xxxxxxxxxxxxx     ")
+  script.Print("              xxxxxxxxxxx       xxxxxxxxxxx     ")
+  script.Print("               xxxxxxxxx         xxxxxxxxx       ")  
+  script.Print("                 xxxxxx           xxxxxx ")
+  script.Print("                   xxx             xxx    ")         
+  script.Print("                       x         x         ")           
+  script.Print("                            x")
+
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
   if HasVendorPartition(input_zip):
