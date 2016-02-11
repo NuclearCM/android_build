@@ -66,7 +66,7 @@ endif
 
 # Extra flags
 ifeq ($(ENABLE_EXTRAGCC),true)
-   NUCLEAR_GCC_CFLAGS += -fgcse-las -fgraphite -ffast-math -fgraphite-identity -fgcse-sm -fivopts -fomit-frame-pointer -frename-registers -fsection-anchors -ftracer -ftree-loop-im -ftree-loop-ivcanon -funsafe-loop-optimizations -funswitch-loops -fweb -Wno-error=array-bounds -Wno-error=clobbered -Wno-error=maybe-uninitialized -Wno-error=strict-overflow -frerun-cse-after-loop -ffunction-sections -fdata-sections -fira-loop-pressure -fforce-addr -funroll-loops -ftree-loop-distribution -ffp-contract=fast -mvectorize-with-neon-quad -Wno-unused-parameter -Wno-unused-but-set-variable
+  # NUCLEAR_GCC_CFLAGS += -fgcse-las -fgraphite -ffast-math -fgraphite-identity -fgcse-sm -fivopts -fomit-frame-pointer -frename-registers -fsection-anchors -ftracer -ftree-loop-im -ftree-loop-ivcanon -funsafe-loop-optimizations -funswitch-loops -fweb -Wno-error=array-bounds -Wno-error=clobbered -Wno-error=maybe-uninitialized -Wno-error=strict-overflow -frerun-cse-after-loop -ffunction-sections -fdata-sections -fira-loop-pressure -fforce-addr -funroll-loops -ftree-loop-distribution -ffp-contract=fast -mvectorize-with-neon-quad -Wno-unused-parameter -Wno-unused-but-set-variable
 
    NUCLEAR_GCC_CPPFLAGS += -fgcse-las -fgcse-sm -fivopts -fomit-frame-pointer -frename-registers -fsection-anchors -ftracer -ftree-loop-im -ftree-loop-ivcanon -funsafe-loop-optimizations -funswitch-loops -fweb -Wno-error=array-bounds -Wno-error=clobbered -Wno-error=maybe-uninitialized -Wno-error=strict-overflow -frerun-cse-after-loop -ffunction-sections -fdata-sections -fira-loop-pressure -fforce-addr -funroll-loops -ftree-loop-distribution -ffp-contract=fast -mvectorize-with-neon-quad -Wno-unused-parameter -Wno-unused-but-set-variable
 endif
@@ -80,7 +80,7 @@ endif
 #FFAST-MATH
 ifeq ($(FFAST_MATH),true)
     CLANG_CONFIG_EXTRA_CONLYFLAGS += -ffast-math -ftree-vectorize
-    NUCLEAR_GCC_CPPFLAGS += -ffast-math -ftree-vectorize
+   # NUCLEAR_GCC_CPPFLAGS += -ffast-math -ftree-vectorize
 endif
 
 # IPA Analyser
